@@ -1,6 +1,7 @@
-# (Ghost)CMS version Vuepress
-## Quick demo Powered by 
-- (Removed, cuz @Maxbrain0 update static generate method)arash16/nuxt-ssr-cache (Plugin, Main power)
+# (Ghost)CMS version Vuepress  
+## Deprecated, Plz check Maxbrain0's Repo
+## ~~Quick demo Powered by~~ 
+- (Deprecated, cuz @Maxbrain0 update static generate method)arash16/nuxt-ssr-cache (Plugin, Main power)
 - [Maxbrain0/nuxt-ghost-starter](https://github.com/JacobSNGoodwin/nuxt-ghost-starter) (Forked, theme)
 
 # Solution for
