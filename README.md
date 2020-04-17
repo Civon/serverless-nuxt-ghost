@@ -22,7 +22,7 @@ Runing Ghost on local machine and host blog on static Github Page, Netlify, Trav
     2. Follow the .env.example fillin your site url(w/ no trailing /)
     3. Fill intergration key into ghost-key
     4. Run `npm install && npm run generate`
-3. Bonus: Setup CI
+3. Bonus: Setup CI  
 Simplely, you can wrote shell command to *"generate, commit, push"* by one-click, and let Github do the rest hosting job for you :tada:
 
 ### Note:
