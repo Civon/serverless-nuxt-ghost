@@ -1,24 +1,37 @@
-FORK FROM 
-- Maxbrain0/nuxt-ghost-starter
-- arash16/nuxt-ssr-cache
+## Quick demo Powered by 
+- arash16/nuxt-ssr-cache (Plugin, main power)
+- Maxbrain0/nuxt-ghost-starter (Forked, theme)
 
-# Can't resolve w/ submodule problem, so just demo here(no CI/CD)  
-(maybe docker next time)
-In actual use, plz fallow instruction of ghost to build a instance aside. 
+# Solution for
+1. Non server
+2. Static hosting
+3. Local Ghost CMS
+## Situation
+Runing Ghost on local machine and host blog on static Github Page, Netlify, Travis e.g.
 
 ## Requirements
+### - A runing (local) ghost instance 
 
-1. A ghost instance
-2. This repo
+## Build step
 
-## Installation
-
-1. Setup ghost
-    > `npm run setup && npm run start`
-    > # do setting & add a intergration
+1. Setup ghost  
+    1. Go thru ghost-admin panel adding a custom intergration, 
+    2. Copy the content key 
 2. Setup repo 
-    > touch .env & copy intergration key into it
-    > `npm run generate`
+    1. create .env file 
+    2. Follow the .env.example fillin your site url(w/ no trailing /)
+    3. Fill intergration key into ghost-key
+    4. Run `npm install && npm run generate`
 
 ### Note:
-For demo purpose, dist/ is rm in .gitignore
+For demo purpose, dist/ is rm in .gitignore, no CI/CD
+
+## Other use case
+1. Online CI/CD (non-A JAM stack)
+> Own a domain deploy ghost on it(host static on github ect.), and trigger CI build each time you update post
+> then, CD it to static hosting or CDN
+
+2. Local CI/CD by selfhost gitlab ect.
+> Almost same above, change the CI/CD localy
+
+###### JAMstack,Ghost, Static hosting, Github page 
