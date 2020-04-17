@@ -1,55 +1,43 @@
-# nuxt-ghost-starter
+# (Ghost)CMS version Vuepress
+## Quick demo Powered by 
+- (Removed, cuz @Maxbrain0 update static generate method)arash16/nuxt-ssr-cache (Plugin, Main power)
+- [Maxbrain0/nuxt-ghost-starter](https://github.com/JacobSNGoodwin/nuxt-ghost-starter) (Forked, theme)
 
-> Nuxt Static and Universal site generation using the Ghost Content API and NUXTJS
->
-> Site fetches and provides Ghost blog data to NUXTJS components
-> With data already provided to the VUE components, a site can be rapidly templated
+# Solution for
+1. Non server
+2. Static hosting
+3. Local Ghost CMS
+## Situation
+Runing Ghost on local machine and host blog on static Github Page, Netlify, Travis e.g.
 
-## Build Setup
+## Requirements
+### - A runing (local) ghost instance 
 
-To get the Ghost Content API working, you will first need to access your blog's backend to get the API key. Instructions may be found [here](https://docs.ghost.org/api/content/#authentication).
+## Build step
 
-You will then need to provide this information to the file .env.example, and the rename this file to '.env'. This app uses @nuxtjs/dotenv to load these environment variables into the project.
+1. Setup ghost  
+    1. Go thru ghost-admin panel adding a custom intergration, 
+    2. Copy the content key 
+2. Setup repo 
+    1. Create .env file 
+    2. Follow the .env.example fillin your site url(w/ no trailing /)
+    3. Fill intergration key into ghost-key
+    4. Run `npm install && npm run generate`
+3. Bonus: Setup CI  
+Simplely, you can wrote shell command to *"generate, commit, push"* by one-click, and let Github do the rest hosting job for you :tada:
 
-``` bash
-# install dependencies
-$ npm install
+### Note:
+For demo purpose, dist/ is rm in .gitignore, no CI/CD here  
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Other use case
+Rather than run locally, deploy thru one-click commit, you can also:
 
-# build for production and launch server
-$ npm run build
-$ npm start
+1. Fully Online include CI/CD (non-A JAM stack)
+> Own a domain deploy ghost on it(host static on github ect.)
+> Trigger CI build each time you update post
+> Then, CD it to static hosting or CDN
 
-# generate static project
-$ npm run generate
-```
 
-## Important Configuration
 
-The /util/ghost.js file contains some important configuration items. 
+###### JAMstack,Ghost, Static hosting, Github page 
 
-First, it exports the GhostContent API that can then be used in components to fetch data (for both static and universal site generation). This must be called as a function in other components.
-
-Second, you will see the array _postIndexFields_. As you may not want to provide all post data to you home page for posts links, you can configure desired items in this array. See the [Ghost Content API](https://docs.ghost.org/api/content/#resources) for more details.
-
-Last but not least, it contains a function called _generateRoutes_ that is imported in nuxt.config.js. This will generate dynamic routes (depending on how many post pages, authors, and tags are fetched) when you run __npm run generate__. See [Nuxt generate property](https://nuxtjs.org/api/configuration-generate).
-
-You may need to tweak this to your liking, but for now it generates are post, pages, and index pages for all posts, posts by tag, and post by author with pagination. 
-
-In nuxt.config.js you will also note that:
-```
-generate: {
-    subFolders: false,
-    ...
-  }
-```
-
-The _subFolders_ property was set to false to be able to provide a 404 error pages with Ghost's Navigation data (dynamic data retrieved from Ghost) when generating a static site. This page is 404.vue.
-
-## In Action
-
-To see a Netlify-hosted, statically generated version of this site in action, visit [https://blog.jacobgoodwin.me](https://blog.jacobgoodwin.me)
-
-For a detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
