@@ -37,7 +37,8 @@ export default {
         })
       } catch (e) {
         // as far as user is concerned this isn't an API failure
-        error({ statusCode: 404, message: e.message })
+        location.reload()
+        // error({ statusCode: 404, message: e.message })
       }
     }
   },

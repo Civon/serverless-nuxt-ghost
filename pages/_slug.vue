@@ -42,7 +42,8 @@ export default {
         } catch (e) {
           // forward error - just call all errors 404
           // since user doesn't need to know about content API
-          error({ statusCode: 404, message: e.message })
+          location.reload()
+          // error({ statusCode: 404, message: e.message })
         }
       } else {
         try {
@@ -57,7 +58,8 @@ export default {
             nextSlug: postLinks.nextSlug
           })
         } catch (e) {
-          error({ statusCode: 404, message: e.message })
+          location.reload()
+          // error({ statusCode: 404, message: e.message })
         }
       }
     }
